@@ -1,6 +1,4 @@
 FROM nginx:alpine
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 COPY index.html /usr/share/nginx/html/index.html
+CMD ["nginx", "-g", "daemon off;"]
 EXPOSE 80
-ENTRYPOINT ["/entrypoint.sh"]
